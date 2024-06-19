@@ -14,4 +14,8 @@ resource "aws_instance" "helloworld" {
     Name = "Hello World"
     Course= "TF fundamentals"
   }
+
+  lifecycle {
+    prevent_destroy = false
+  }
 }
