@@ -4,9 +4,14 @@ provider "aws" {
 
 
 resource "aws_instance" "helloworld" {
-  ami           = "ami-023adaba598e661ac"
+  #ubuntu ami
+  #ami           = "ami-023adaba598e661ac"
+ 
+  #debian ami
+  ami = "ami-042e6fdb154c830c5"
   instance_type = "t2.micro"
   tags = {
-    Name = "HelloWorld"
+    Name = "Hello World"
+    Course= "TF fundamentals"
   }
 }
