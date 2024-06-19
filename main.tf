@@ -19,3 +19,13 @@ resource "aws_instance" "helloworld" {
     prevent_destroy = false
   }
 }
+
+resource "aws_security_group" "fw-rule-ingress" {
+        name = "terraform-example-instance"
+        ingress {
+                from_port = 22
+                to_port = 22
+                protocol = "tcp"
+                cidr_blocks = ["0.0.0.0/0"]
+        }
+}
